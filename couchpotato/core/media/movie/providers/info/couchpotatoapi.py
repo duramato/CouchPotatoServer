@@ -109,7 +109,7 @@ class CouchPotatoApi(MovieProvider):
         #http://www.omdbapi.com/ http://videoeta.com/ http://stackoverflow.com/questions/9321947/how-to-get-dvd-release-dates-of-movies-programatically 
         #https://www.themoviedb.org/documentation/api
         dates = self.getJsonData(self.urls['eta'] % identifier, headers = self.getRequestHeaders())
-        log.debug('Found ETA for %s: %s', (identifier, dates, headers))
+        log.debug('Found ETA for %s: %s', (identifier, dates))
 
         return dates
 
