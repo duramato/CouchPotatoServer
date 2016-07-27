@@ -86,46 +86,6 @@ var AboutSettingTab = new Class({
 				new Element('dd', {'html': App.getOption('options')})
 			);
 		}
-
-		if(!self.fillVersion(Updater.getInfo()))
-			Updater.addEvent('loaded', self.fillVersion.bind(self));
-
-		self.settings.createGroup({
-			'name': 'Help Support CouchPotato'
-		}).inject(self.content).adopt(
-			new Element('div.usenet').adopt(
-				new Element('div.text').adopt(
-					new Element('span', {
-						'text': 'Help support CouchPotato and save some money for yourself by signing up for an account at'
-					}),
-					new Element('a', {
-						'href': 'https://usenetserver.com/partners/?a_aid=couchpotato&a_bid=3f357c6f',
-						'target': '_blank',
-						'text': 'UsenetServer'
-					}),
-					new Element('span[text=or]'),
-					new Element('a', {
-						'href': 'https://www.newshosting.com/partners/?a_aid=couchpotato&a_bid=a0b022df',
-						'target': '_blank',
-						'text': 'Newshosting'
-					}),
-					new Element('span', {
-						'text': '. For as low as $7.95 per month, you’ll get:'
-					})
-				),
-				new Element('ul').adopt(
-					new Element('li.icon-ok', {
-						'text': Math.ceil((today.getTime()-millennium.getTime())/(one_day))+" days retention"
-					}),
-					new Element('li.icon-ok[text=No speed or download limits]'),
-					new Element('li.icon-ok[text=Free SSL Encrypted connections]')
-				)
-			),
-			new Element('div.donate', {
-				'html': 'Or support me via: <iframe src="https://couchpota.to/donate.html" scrolling="no"></iframe>'
-			})
-		);
-
 	},
 
 	fillVersion: function(json){
