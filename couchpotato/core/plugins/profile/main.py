@@ -209,6 +209,9 @@ class ProfilePlugin(Plugin):
             }, {
                 'label': 'UHD 4K',
                 'qualities': ['720p', '1080p', '2160p']
+            }, {
+                'label': 'WEB',
+                'qualities': ['web', 'webrip']
             }]
 
             # Create default quality profile
